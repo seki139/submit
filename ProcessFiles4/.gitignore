@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+# application.properties ファイルを無視する
+ProcessFiles4/src/main/resources/application.properties
