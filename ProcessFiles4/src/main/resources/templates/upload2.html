@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ファイルアップロードフォーム2</title>
+</head>
+<body>
+    <h1>ファイルをアップロードする(upload files)</h1>
+    <form  th:action="@{/processFile2}" method="post" enctype="multipart/form-data">
+        <label for="files" title="ファイルを選択してください">ファイルを選択してください(select files)：</label>
+        <input type="file" name="files" id="files" multiple value="select file">
+        <div>
+        <p>全角から半角へ(change from full-width to half-width)</p>
+            <label for="sign">
+                <input type="checkbox" name="punctuation" id="sign" value="sign">(,)and(.)
+            </label>
+            <!-- 他の句読点や記号のチェックボックスを追加 -->
+            <label for="number">
+                <input type="checkbox" name="punctuation" id="number" value="number"> (number)
+            </label>
+            
+        </div>
+        <p>書式について確認してください(check the format)</p>
+        	<select name="formatting">
+	        	<option	 value="default">そのまま (default)</option>
+	        	<option	 value="removeWhitespace">空白を削除 (remove white space)</option>
+	        	<option	 value="removeTab">タブを削除 (remove tab)</option>
+	        	<option	 value="removeHead">行頭の空白を削除 (remove head of line)</option>
+	        	<option	 value="removeOther">行頭の空白以外の空白を削除 (remove whitespace other than the leading whitespace)</option>
+        	</select>
+        <input type="submit" value="upload">
+    </form>
+    <p>このアプリはtexまたはtxtファイルのみ受け付けます<br>
+    This app only accepts tex files or txt files.</p>
+     <script type="text/javascript" src="js/uploadValidation2.js"></script>	
+</body>
+</html>

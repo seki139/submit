@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+</head>
+<body>
+    <form method="post" th:action="@{/search}">
+        <input type="text" name="search" th:value="${search}" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+    
+	<h1>Text Files</h1>
+	    <ul>
+	        <li th:each="file : ${textFiles}">
+	            <a th:href="@{'/download/text/' + ${file.id}}"
+	               th:text="${file.name}">File</a>
+	        </li>
+	    </ul>
+	
+	    <h1>Image Files</h1>
+	    <ul>
+	        <li th:each="file : ${imageFiles}">
+	            <a th:href="@{'/download/image/' + ${file.id}}"
+	               th:text="${file.name}">File</a>
+	        </li>
+	    </ul>
+</body>
+</html>

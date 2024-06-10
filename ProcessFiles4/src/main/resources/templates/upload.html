@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ファイルアップロードフォーム</title>
+</head>
+<body>
+    <h1>ファイルをアップロードする(upload files)</h1>
+    <form  th:action="@{/processFile}" method="post" enctype="multipart/form-data">
+        <label for="files" title="ファイルを選択してください">ファイルを選択してください(select files)：</label>
+        <input type="file" name="files" id="files" multiple value="select file">
+        <div>
+        <p>削除したい記号をチェックしてください(check the symbols you want to remove)</p>
+            <label for="comma">
+                <input type="checkbox" name="punctuation" id="comma" value="comma">(,)
+            </label>
+            <label for="period">
+                <input type="checkbox" name="punctuation" id="period" value="period">(.)
+            </label>
+            <!-- 他の句読点や記号のチェックボックスを追加 -->
+            <label for="than">
+                <input type="checkbox" name="punctuation" id="than" value="than"> (&lt;&gt;)
+            </label>
+            <label for="kagikkako">
+                <input type="checkbox" name="punctuation" id="kagikkako" value="kagikkako"> ([])
+            </label>
+            <label for="tyukkako">
+                <input type="checkbox" name="punctuation" id="tyukkako" value="tyukkako"> ({})
+            </label>
+        </div>
+        <div>
+        <p>書式について確認してください(check the format)</p>
+        	<select name="formatting">
+	        	<option	 value="default">そのまま (default)</option>
+	        	<option	 value="removeWhitespace">空白を削除 (remove white space)</option>
+	        	<option	 value="removeTab">タブを削除 (remove tab)</option>
+	        	<option	 value="removeHead">行頭の空白を削除 (remove head of line)</option>
+        	</select>
+        	
+            <!--  <label><input type="radio" name="formatting" value="alignText">Align Text</label>-->
+        </div>
+        <input type="submit" value="upload">
+    </form>
+    <p>このアプリはテキストファイルまたはcsvファイルのみ受け付けます<br>
+    This app only accepts text files or csv files</p>
+     <script type="text/javascript" src="js/uploadValidation.js"></script>	
+</body>
+</html>
