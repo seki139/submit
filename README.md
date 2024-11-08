@@ -8,3 +8,11 @@ https://youtu.be/7VyB5jcdKuw?feature=shared
 
 ## 補足
 //データベースの情報は隠しています。実際に動かしたい場合は連絡をください。データベースの仕様書を送ります。自身のデータベースでテーブルを作成して実行してください
+
+## 仕様言語・ライブラリ・フレームワーク
+  - Java
+  - JavaScript
+  - SpringBoot
+  - html
+  - css
+  - MySQL
